@@ -17,7 +17,7 @@ class PostViewController: UIViewController {
         
         view.backgroundColor = .systemGray2
        
-        title = postTitle.title
+        title = FeedViewController().postTitle.title
         
         let infoButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(tapOnInfoButton))
         

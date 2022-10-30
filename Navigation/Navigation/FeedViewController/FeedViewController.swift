@@ -8,11 +8,17 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+    
+    var postTitle = Post(title: "Swift News")
    
     private let showPostButton: UIButton = {
         let button = UIButton()
         button.setTitle("NEW POST", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.systemGray2.cgColor
         return button
     }()
     
@@ -20,7 +26,7 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         view.addSubview(showPostButton)
-        showPostButton.frame = CGRect(x: 20, y: 120, width: 100, height: 50)
+        showPostButton.frame = CGRect(x: 20, y: 120, width: UIScreen.main.bounds.size.width - 40, height: 70)
         addTarget()
     }
     
@@ -38,6 +44,4 @@ class FeedViewController: UIViewController {
 struct Post {
     var title: String
 }
-
-var postTitle = Post(title: "Swift News")
 

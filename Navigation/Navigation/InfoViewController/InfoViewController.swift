@@ -15,6 +15,7 @@ class InfoViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Alert!", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = .red
         return button
     }()
     
