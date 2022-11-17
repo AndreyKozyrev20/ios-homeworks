@@ -71,11 +71,11 @@ class ProfileHeaderView: UIView {
         self.addSubview(profileName)
         self.addSubview(statusButton)
         self.addSubview(status)
-        tapOnStatusButton()
+        self.tapOnStatusButton()
     }
     
     func tapOnStatusButton() {
-        statusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        self.statusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
  
     @objc
