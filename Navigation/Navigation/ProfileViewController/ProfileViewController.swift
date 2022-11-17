@@ -15,16 +15,24 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray6
         self.setupNavigationBar()
-        self.viewWillLayoutSubviews()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        self.view.addSubview(headerView)
-        self.headerView.frame = view.safeAreaLayoutGuide.layoutFrame
+        self.setupUI()
     }
     
     func setupNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = "Profile"
     }
     
+    private func setupUI() {
+        
+        self.view.addSubview(headerView)
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 220)
+        ])
+        
+        
+    }
 }
